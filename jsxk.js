@@ -27,12 +27,11 @@ jsxk.exec = function(jsxFilePath, vars, callback){
     throw err;
   }
   
-  
   let tmpJsxFilePath;
   let c = 0;
   while (true){
     const pathParts = jsxFilePath.split('.');
-    pathParts.splice(pathParts.length-1, 0, 'working' + String(c));
+    pathParts.splice(pathParts.length-1, 0, 'working' + pad(c,3));
     tmpJsxFilePath = pathParts.join('.');
     c++;
     if (!fs.existsSync(tmpJsxFilePath)){
@@ -233,4 +232,17 @@ module.exports = jsxk;
 const escapeRegExp = (string) => {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
+
+
+function pad(num, charNum){  
+  
+  var str = String(num);
+  var len = charNum-str.length;
+  for (var i = 0; i < len; i++){
+    str = '0' + str;
+  }
+  return str;
+  
+}
+
 

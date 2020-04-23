@@ -1,6 +1,6 @@
 {
   "name": "jsxk",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Provides a two-way communication interface between NodeJS and Adobe ExtendScript (JSX) files",
   "main": "jsxk.js",
   "scripts": {
