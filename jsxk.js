@@ -27,13 +27,18 @@ jsxk.exec = function(jsxFilePath, vars, callback){
     throw err;
   }
   
-  const pathParts = jsxFilePath.split('.');
-  pathParts.splice(pathParts.length-1, 0, 'working');
-  let tmpJsxFilePath = pathParts.join('.');
   
-  if (fs.existsSync(tmpJsxFilePath)){
-    throw new Error('Running or failed JSX process already at `'+tmpJsxFilePath+'`. Delete and re-run.');
-  } 
+  let tmpJsxFilePath;
+  let c = 0;
+  while (true){
+    const pathParts = jsxFilePath.split('.');
+    pathParts.splice(pathParts.length-1, 0, 'working' + String(c));
+    tmpJsxFilePath = pathParts.join('.');
+    c++;
+    if (!fs.existsSync(tmpJsxFilePath)){
+      break;
+    }
+  }
   
   // Inject variables into temp file
   
