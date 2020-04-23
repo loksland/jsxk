@@ -166,7 +166,7 @@ jsxk.inject = function(jsxSrc, vars){
   
   for (let varName in vars){
     
-    const regex = new RegExp('^((?:var|const|let) '+escapeRegExp(varName)+' ?= ?)(.*)$', 'mi'); // Find first variable declaration, case insensitive
+    const regex = new RegExp('^[^\S\r\n]*((?:var|const|let) '+escapeRegExp(varName)+'[^\S\r\n]*=[^\S\r\n]*?)(.*)$', 'mi'); // Find first variable declaration, case insensitive
     let m;
     if ((m = regex.exec(jsxSrc)) !== null) {
       jsxSrc = jsxSrc.substr(0, m.index) + m[1] + JSON.stringify(vars[varName]) + ';' + jsxSrc.substr(m.index+m[0].length)
