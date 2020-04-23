@@ -9,3 +9,7 @@ alert(MESSAGE);
 
 jsxOnComplete({foo:'bar'});
 
+function jsxOnComplete(data){
+// Will be overridden
+}
+

@@ -72,6 +72,10 @@ app.bringToFront();
 
 jsxOnComplete({msg:'Hi from JSX'});
 
+function jsxOnComplete(data){
+// Will be overridden
+}
+
 ```
 
 Calling `jsxOnComplete(data)` from the JSX script will flag the script has finished and optionally return a data object. In the above example `Hi from JSX` will be returned to Node and written to the console.
