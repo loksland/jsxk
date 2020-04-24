@@ -18,6 +18,7 @@ This library is built for command-line NodeJS scripts interfacing with Adobe Pho
 - Injecting variables into an existing JSX script allows the JSX to be executed by itself without relying on NodeJS. This makes authoring and testing the JSX script much more convenient.
 - Executing a local JSX script file utilises the native ExtendScript environment on the host system so doesn't rely on complicated dependencies such as AppleScript to perform the script.
 - File based callback system ensures the JSX script has completed before moving on.
+- Supports queuing multiple JSX scripts at once that are each actioned before receiving individual callbacks.
 
 ### Installation
 
