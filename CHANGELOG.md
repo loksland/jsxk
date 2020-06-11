@@ -1,5 +1,6 @@
 # Changelog
 
+- v0.1.8 - (12-06-2020) Fixed `jsxk.options.targetProcess` bug.
 - v0.1.7 - (24-04-2020) Updated docs.
 - v0.1.6 - (23-04-2020) Padded out temp file names.
 - v0.1.5 - (23-04-2020) Allowing multiple concurrent temp scripts to be queued.

@@ -53,12 +53,11 @@ jsxk.exec = function(jsxFilePath, vars, callback){
     throw new Error('Unable to create `'+tmpJsxFilePath+'`');
   }
   
-  // options.wait = true;
+  let _options = {};
   if (options.targetProcess){
-    options.app = jsxk.targetProcess; // 'Adobe Photoshop 2020';
+    _options.app = options.targetProcess; // 'Adobe Photoshop 2020';
   }
-  
-  const psdExec = open(tmpJsxFilePath, options);
+  const jsxExec = open(tmpJsxFilePath, _options);
   
   const checkForCompletion = new Promise(function(resolve, reject){
     
@@ -128,7 +127,7 @@ jsxk.exec = function(jsxFilePath, vars, callback){
     
   }
   
-  let chain = Promise.all([psdExec,checkForCompletion]).then(function(data){    
+  let chain = Promise.all([jsxExec,checkForCompletion]).then(function(data){    
   
     return deleteTempFile().then(function(){      
       return data[1];

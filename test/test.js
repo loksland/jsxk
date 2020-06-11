@@ -1,7 +1,7 @@
 const jsxk = require('../jsxk');
 
 if (true){
-  
+  //jsxk.options.targetProcess = 'Adobe After Effects CC 2019';
   jsxk.exec('test.jsx', {MESSAGE:'Promise'}).then(function(data){
     console.log('Success');
     console.log(data)
